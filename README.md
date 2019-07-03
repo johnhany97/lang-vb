@@ -1,22 +1,22 @@
-# Docker Exec Image: C#
+# Docker Exec Image: VB
 
-A Dockerfile describing an container capable of executing C# source files.
+A Dockerfile describing an container capable of executing VB source files.
 
 # Build
 
 ```sh
-git clone https://github.com/docker-exec/csharp.git
-docker build -t dexec/lang-csharp .
+git clone https://github.com/johnhany97/lang-vb.git
+docker build -t johnhany97/lang-vb .
 ```
 
 # Usage
 
-In a directory containing a script e.g. foo.cs, run:
+In a directory containing a script e.g. foo.vb, run:
 
 ```sh
 docker run -t --rm \
-    -v $(pwd -P)/foo.cs:/tmp/dexec/build/foo.cs \
-    dexec/lang-csharp foo.cs
+    -v $(pwd -P)/foo.vb:/tmp/dexec/build/foo.vb \
+    johnhany97/lang-vb foo.vb
 ```
 
 ## Passing arguments to the script
@@ -33,8 +33,8 @@ Each argument passed must be prefixed in this way, e.g.
 
 ```sh
 docker run -t --rm \
-    -v $(pwd -P)/foo.cs:/tmp/dexec/build/foo.cs \
-    dexec/lang-csharp foo.cs \
+    -v $(pwd -P)/foo.vb:/tmp/dexec/build/foo.vb \
+    johnhany97/lang-vb foo.vb \
     --arg='hello world' \
     --arg=foo \
     --arg=bar
@@ -54,8 +54,8 @@ Each argument passed must be prefixed in this way, e.g.
 
 ```sh
 docker run -t --rm \
-    -v $(pwd -P)/foo.cs:/tmp/dexec/build/foo.cs \
-    dexec/lang-csharp foo.cs \
+    -v $(pwd -P)/foo.vb:/tmp/dexec/build/foo.vb \
+    johnhany97/lang-vb foo.vb \
     --build-arg=-some-compiler-option \
     --build-arg=some-compiler-option-value
 ```

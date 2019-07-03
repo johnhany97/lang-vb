@@ -1,5 +1,5 @@
-FROM        dexec/base-mono:1.0.1
+FROM        mono:5.20.1.19
 MAINTAINER  andystanton
 ADD         image-common /tmp/dexec/image-common
 VOLUME      /tmp/dexec/build
-ENTRYPOINT  ["/tmp/dexec/image-common/dexec-mono-family.sh", "mcs", "-out:"]
+ENTRYPOINT  ["/tmp/dexec/image-common/dexec-mono-family.sh", "vbnc", "-out:"]
